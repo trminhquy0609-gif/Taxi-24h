@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taxi 24/7 - Đặt xe nhanh chóng</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #e74c3c;
+            --accent-color: #3498db;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f9fa;
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--secondary-color) !important;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.9)), url('https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            margin-bottom: 50px;
+        }
+        
+        .booking-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            padding: 30px;
+            margin-top: -50px;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .btn-primary {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+            padding: 12px 30px;
+            font-weight: 600;
+        }
+        
+        .btn-primary:hover {
+            background-color: #c0392b;
+            border-color: #c0392b;
+        }
+        
+        .feature-icon {
+            background-color: rgba(52, 152, 219, 0.1);
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--accent-color);
+            font-size: 28px;
+        }
+        
+        .feature-card {
+            text-align: center;
+            padding: 25px;
+            border-radius: 10px;
+            transition: transform 0.3s;
+            background: white;
+            height: 100%;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .price-badge {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+        
+        .taxi-type-card {
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: all 0.3s;
+        }
+        
+        .taxi-type-card:hover {
+            border-color: var(--accent-color);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.1);
+        }
+        
+        .footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 50px 0 20px;
+            margin-top: 50px;
+        }
+        
+        .contact-info i {
+            color: var(--secondary-color);
+            margin-right: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 70px 0;
+            }
+            
+            .booking-card {
+                margin-top: -30px;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-taxi"></i> Taxi24/7
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Trang chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#booking">Đặt xe</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Dịch vụ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#pricing">Bảng giá</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Liên hệ</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-5 fw-bold">Taxi 24/7 - Đặt xe nhanh chóng</h1>
+                    <p class="lead">Dịch vụ taxi 24 giờ, đón khách tận nơi, giá cả minh bạch, phục vụ chu đáo.</p>
+                    <div class="mt-4">
+                        <a href="#booking" class="btn btn-primary btn-lg me-3">
+                            <i class="fas fa-car"></i> Đặt xe ngay
+                        </a>
+                        <a href="tel:19001000" class="btn btn-outline-light btn-lg">
+                            <i class="fas fa-phone"></i> Gọi: 1900 1000
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Form -->
+    <section id="booking" class="container">
+        <div class="booking-card">
+            <h2 class="text-center mb-4">Đặt xe taxi nhanh chóng</h2>
+            <form id="bookingForm">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="pickup" class="form-label">Điểm đón <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="pickup" placeholder="Nhập địa chỉ đón" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="destination" class="form-label">Điểm đến <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="destination" placeholder="Nhập địa chỉ đến" required>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="phone" class="form-label">Số điện thoại <span class="text-danger">*</span></label>
+                        <input type="tel" class="form-control" id="phone" placeholder="Nhập số điện thoại" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="taxiType" class="form-label">Loại xe</label>
+                        <select class="form-select" id="taxiType">
+                            <option value="4">Xe 4 chỗ</option>
+                            <option value="7">Xe 7 chỗ</option>
+                            <option value="16">Xe 16 chỗ</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="datetime" class="form-label">Thời gian đón</label>
+                        <input type="datetime-local" class="form-control" id="datetime">
+                        <div class="form-text">Để trống nếu muốn đón ngay</div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="note" class="form-label">Ghi chú thêm</label>
+                        <textarea class="form-control" id="note" rows="1" placeholder="Ghi chú thêm cho tài xế"></textarea>
+                    </div>
+                </div>
+                
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-primary btn-lg">
+                        <i class="fas fa-paper-plane"></i> ĐẶT XE NGAY
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="services" class="container py-5">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Tại sao chọn Taxi24/7</h2>
+            <p class="text-muted">Chúng tôi cam kết mang đến dịch vụ tốt nhất</p>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h4>24/7 Không ngừng nghỉ</h4>
+                    <p>Dịch vụ hoạt động 24 giờ mỗi ngày, 7 ngày trong tuần, sẵn sàng phục vụ mọi lúc.</p>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h4>Đặt xe nhanh chóng</h4>
+                    <p>Đặt xe chỉ trong 30 giây với ứng dụng thân thiện và hệ thống tiếp nhận thông minh.</p>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h4>An toàn tuyệt đối</h4>
+                    <p>Tài xế được đào tạo bài bản, xe được kiểm định thường xuyên, đảm bảo an toàn.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="container py-5 bg-light rounded-3">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Bảng giá tham khảo</h2>
+            <p class="text-muted">Giá cước minh bạch, không phát sinh</p>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="taxi-type-card text-center">
+                    <h4>Xe 4 chỗ</h4>
+                    <div class="my-3">
+                        <span class="price-badge">10.000đ/km đầu tiên</span>
+                    </div>
+                    <p>Sau km đầu tiên: <strong>15.000đ/km</strong></p>
+                    <p>Chờ đợi: <strong>50.000đ/giờ</strong></p>
+                    <p>Phù hợp: 1-3 khách, ít hành lý</p>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="taxi-type-card text-center">
+                    <h4>Xe 7 chỗ</h4>
+                    <div class="my-3">
+                        <span class="price-badge">15.000đ/km đầu tiên</span>
+                    </div>
+                    <p>Sau km đầu tiên: <strong>20.000đ/km</strong></p>
+                    <p>Chờ đợi: <strong>60.000đ/giờ</strong></p>
+                    <p>Phù hợp: 4-6 khách, hành lý vừa</p>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="taxi-type-card text-center">
+                    <h4>Xe 16 chỗ</h4>
+                    <div class="my-3">
+                        <span class="price-badge">25.000đ/km đầu tiên</span>
+                    </div>
+                    <p>Sau km đầu tiên: <strong>30.000đ/km</strong></p>
+                    <p>Chờ đợi: <strong>80.000đ/giờ</strong></p>
+                    <p>Phù hợp: Đoàn đông người, nhiều hành lý</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="alert alert-info mt-4">
+            <i class="fas fa-info-circle"></i> <strong>Lưu ý:</strong> Giá trên chỉ mang tính tham khảo. Giá chính xác sẽ được hiển thị sau khi nhập điểm đón và điểm đến.
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="container py-5">
+        <div class="row">
+            <div class="col-lg-6">
+                <h2 class="fw-bold mb-4">Liên hệ với chúng tôi</h2>
+                <div class="contact-info">
+                    <p><i class="fas fa-phone"></i> <strong>Tổng đài đặt xe:</strong> 1900 1000</p>
+                    <p><i class="fas fa-headset"></i> <strong>Hỗ trợ khách hàng:</strong> 1900 1001</p>
+                    <p><i class="fas fa-envelope"></i> <strong>Email:</strong> support@taxi24-7.vn</p>
+                    <p><i class="fas fa-map-marker-alt"></i> <strong>Văn phòng:</strong> Số 123, Đường ABC, Quận XYZ, TP. Hồ Chí Minh</p>
+                </div>
+                
+                <div class="mt-4">
+                    <h5>Tải ứng dụng Taxi24/7</h5>
+                    <div class="d-flex flex-wrap gap-2 mt-3">
+                        <a href="#" class="btn btn-outline-dark">
+                            <i class="fab fa-google-play"></i> Google Play
+                        </a>
+                        <a href="#" class="btn btn-outline-dark">
+                            <i class="fab fa-app-store"></i> App Store
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-6 mt-4 mt-lg-0">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Câu hỏi thường gặp</h5>
+                        
+                        <div class="accordion accordion-flush" id="faqAccordion">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                        Làm thế nào để đặt xe?
+                                    </button>
+                                </h2>
+                                <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        Bạn có thể đặt xe qua website này, ứng dụng điện thoại hoặc gọi đến tổng đài 1900 1000.
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                        Thanh toán như thế nào?
+                                    </button>
+                                </h2>
+                                <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        Bạn có thể thanh toán bằng tiền mặt, thẻ ngân hàng, ví điện tử hoặc ứng dụng thanh toán.
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                        Có thể đặt xe trước không?
+                                    </button>
+                                </h2>
+                                <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        Có, bạn có thể đặt xe trước tối đa 7 ngày thông qua website hoặc ứng dụng.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h4><i class="fas fa-taxi"></i> Taxi24/7</h4>
+                    <p>Dịch vụ taxi 24/7 uy tín, chất lượng, giá cả minh bạch. Phục vụ khách hàng tận tâm, chu đáo.</p>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <h5>Liên kết nhanh</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#home" class="text-light text-decoration-none">Trang chủ</a></li>
+                        <li><a href="#booking" class="text-light text-decoration-none">Đặt xe</a></li>
+                        <li><a href="#services" class="text-light text-decoration-none">Dịch vụ</a></li>
+                        <li><a href="#pricing" class="text-light text-decoration-none">Bảng giá</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <h5>Kết nối với chúng tôi</h5>
+                    <div class="d-flex gap-3 mt-3">
+                        <a href="#" class="text-light fs-4"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-light fs-4"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-light fs-4"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-light fs-4"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <hr class="mt-4 mb-3" style="border-color: rgba(255,255,255,0.1);">
+            
+            <div class="text-center">
+                <p class="mb-0">&copy; 2023 Taxi24/7. Tất cả các quyền được bảo lưu.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Booking Success Modal -->
+    <div class="modal fade" id="bookingModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Đặt xe thành công!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="text-center">
+                        <i class="fas fa-check-circle text-success fs-1 mb-3"></i>
+                        <p>Yêu cầu đặt xe của bạn đã được ghi nhận. Tài xế sẽ liên hệ với bạn trong vòng 5 phút.</p>
+                        <p class="fw-bold">Mã đặt xe: <span id="bookingCode">TAXI-12345</span></p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script>
+        // Form submission
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const pickup = document.getElementById('pickup').value;
+            const destination = document.getElementById('destination').value;
+            const phone = document.getElementById('phone').value;
+            const taxiType = document.getElementById('taxiType').value;
+            const datetime = document.getElementById('datetime').value;
+            const note = document.getElementById('note').value;
+            
+            // Simple validation
+            if (!pickup || !destination || !phone) {
+                alert('Vui lòng điền đầy đủ thông tin bắt buộc!');
+                return;
+            }
+            
+            // Generate random booking code
+            const bookingCode = 'TAXI-' + Math.floor(10000 + Math.random() * 90000);
+            document.getElementById('bookingCode').textContent = bookingCode;
+            
+            // Show success modal
+            const bookingModal = new bootstrap.Modal(document.getElementById('bookingModal'));
+            bookingModal.show();
+            
+            // In a real app, you would send this data to a server
+            console.log('Booking details:', {
+                pickup, destination, phone, taxiType, datetime, note, bookingCode
+            });
+            
+            // Reset form
+            document.getElementById('bookingForm').reset();
+        });
+        
+        // Set minimum datetime to current time
+        const now = new Date();
+        const timezoneOffset = now.getTimezoneOffset() * 60000;
+        const localISOTime = new Date(now - timezoneOffset).toISOString().slice(0, 16);
+        document.getElementById('datetime').min = localISOTime;
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
